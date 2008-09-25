@@ -1,0 +1,42 @@
+--- origsrc/quodlibet-2.0/quodlibet/formats/mod.py	2008-09-13 22:19:55.000000000 -0500
++++ src/quodlibet-2.0/quodlibet/formats/mod.py	2008-09-25 00:10:28.984422500 -0500
+@@ -15,7 +15,7 @@
+     '.mtm', '.okt', '.s3m', '.stm', '.ult', '.gdm', '.xm']
+ try:
+     import ctypes
+-    _modplug = ctypes.cdll.LoadLibrary("libmodplug.so.0")
++    _modplug = ctypes.cdll.LoadLibrary("cygmodplug-0.dll")
+     _modplug.ModPlug_GetName.restype = ctypes.c_char_p
+ except (ImportError, OSError):
+     extensions = []
+--- origsrc/quodlibet-2.0/quodlibet/player/_xine.py	2008-09-13 22:19:55.000000000 -0500
++++ src/quodlibet-2.0/quodlibet/player/_xine.py	2008-09-25 00:09:59.375237000 -0500
+@@ -10,7 +10,7 @@
+ import ctypes
+ 
+ try:
+-    _libxine = ctypes.cdll.LoadLibrary('libxine.so.1')
++    _libxine = ctypes.cdll.LoadLibrary('cygxine-1.dll')
+ except (ImportError, OSError), e:
+     raise ImportError, e
+ 
+--- origsrc/quodlibet-2.0/setup.py	2008-09-13 22:16:09.000000000 -0500
++++ src/quodlibet-2.0/setup.py	2008-09-25 00:23:20.640190400 -0500
+@@ -21,7 +21,7 @@
+         gdist_clean.run(self)
+ 
+         for ext in self.distribution.gobject_modules:
+-            path = ext.name.replace(".", "/") + ".so"
++            path = ext.name.replace(".", "/") + ".dll"
+             if os.path.exists(path):
+                 os.unlink(path)
+ 
+@@ -250,7 +250,7 @@
+     def run(self):
+         gdist_build_gobject_ext.run(self)
+         for ext in self.distribution.gobject_modules:
+-            path = ext.name.replace(".", "/") + ".so"
++            path = ext.name.replace(".", "/") + ".dll"
+             self.copy_file(os.path.join(self.build_lib, path), path)
+ 
+ if __name__ == "__main__":
