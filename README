@@ -13,7 +13,7 @@ with your favorite player and just want something that can handle
 tagging, Ex Falso is for you.
 
 Runtime requirements:
-  cygwin-1.7.0-62
+  cygwin-1.7.5-1
   gstreamer0.10-plugins-bad
   gstreamer0.10-plugins-base
   gstreamer0.10-plugins-faad
@@ -29,27 +29,27 @@ Runtime requirements:
   gstreamer0.10-plugins-speex
   gstreamer0.10-plugins-vorbis
   gstreamer0.10-plugins-wavpack
-  libgcc1-4.3.4-1
-  libglib2.0_0-2.20.5-1
-  libgtk2.0_0-2.16.6-1
+  libgcc1-4.3.4-3
+  libglib2.0_0-2.22.4-2
+  libgtk2.0_0-2.18.6-1
   libmodplug0-0.8.7-1
-  libX11_6-1.2.2-2
-  python-2.5.4-10
-  python-dbus-0.83.0-10
-  python-feedparser-4.1-2
-  python-gnome2-2.26.1-1
-  python-gobject2.0-2.18.0-1
-  python-gst0.10-0.10.16-1
-  python-gtk2.0-2.16.0-1
-  python-mutagen-1.17-1
+  libX11_6-1.3.3-1
+  python-2.6.5-1
+  python-dbus-0.83.1-1
+  python-feedparser-4.1-3
+  python-gobject2.0-2.20.0-2
+  python-gst0.10-0.10.18-2
+  python-gtk2.0-2.16.0-2
+  python-mutagen-1.19-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  binutils-2.19.51-1
-  cygport-0.9.9-1
+  binutils-2.20.51-2
+  cygport-0.9.83-1
   gawk-3.1.7-1
-  gcc4-core-4.3.4-1
-  intltool-0.40.6-1
+  gcc4-core-4.3.4-3
+  gettext-devel-0.17-11
+  intltool-0.41.1-1
   pkg-config-0.23b-10
 
 Canonical website:
@@ -61,19 +61,22 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack quodlibet-2.1-X-src.tar.bz2
+  unpack quodlibet-2.2.1-X-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./quodlibet-2.1-X.cygport all
+  cygport ./quodlibet-2.2.1-X.cygport all
 
 This will create:
-  /usr/src/quodlibet-2.1-X-src.tar.bz2
-  /usr/src/quodlibet-2.1-X.tar.bz2
+  /usr/src/quodlibet-2.2.1-X-src.tar.bz2
+  /usr/src/quodlibet-2.2.1-X.tar.bz2
 
 -------------------------------------------
 
 Port Notes:
+
+----- version 2.2.1-1 -----
+Version bump, built for Python 2.6.
 
 ----- version 2.1-1 -----
 Initial release for Cygwin 1.7.
