@@ -3,6 +3,6 @@ inherit distutils
 DESCRIPTION="Quod Libet audio player and Ex Falso tagger"
 HOMEPAGE="http://code.google.com/p/quodlibet/"
 SRC_URI="http://quodlibet.googlecode.com/files/${P}.tar.gz"
-PATCH_URI="2.0-dll.patch"
+PATCH_URI="2.3.1-cygwin-dll.patch"
 
 DIFF_EXCLUDES="po"

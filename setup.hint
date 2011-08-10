@@ -1,5 +1,5 @@
 category: Audio Gnome
-requires: gstreamer0.10-plugins-bad gstreamer0.10-plugins-base gstreamer0.10-plugins-faad gstreamer0.10-plugins-ffmpeg gstreamer0.10-plugins-flac gstreamer0.10-plugins-gconf gstreamer0.10-plugins-gnome_vfs gstreamer0.10-plugins-mad gstreamer0.10-plugins-musepack gstreamer0.10-plugins-ogg gstreamer0.10-plugins-oss gstreamer0.10-plugins-speex gstreamer0.10-plugins-vorbis gstreamer0.10-plugins-wavpack libgcc1 libglib2.0_0 libgtk2.0_0 libmodplug0 libX11_6 python python-dbus python-feedparser python-gobject2.0 python-gst0.10 python-gtk2.0 python-mutagen
+requires: gstreamer0.10-plugins-bad gstreamer0.10-plugins-base gstreamer0.10-plugins-faad gstreamer0.10-plugins-ffmpeg gstreamer0.10-plugins-flac gstreamer0.10-plugins-gconf gstreamer0.10-plugins-gnome_vfs gstreamer0.10-plugins-mad gstreamer0.10-plugins-musepack gstreamer0.10-plugins-ogg gstreamer0.10-plugins-oss gstreamer0.10-plugins-speex gstreamer0.10-plugins-vorbis gstreamer0.10-plugins-wavpack libglib2.0_0 libgtk2.0_0 libmodplug1 libX11_6 python python-dbus python-feedparser python-gobject2.0 python-gst0.10 python-gtk2.0 python-mutagen
 sdesc: "Quod Libet audio player and Ex Falso tagger"
 ldesc: "Quod Libet is a GTK+-based audio player written in Python. It's 
 designed around the idea that you know how to organize your music better 
