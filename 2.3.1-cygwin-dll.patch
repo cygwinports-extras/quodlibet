@@ -1,42 +1,13 @@
 --- origsrc/quodlibet-2.3.1/quodlibet/formats/mod.py	2011-07-16 14:51:00.000000000 -0500
 +++ src/quodlibet-2.3.1/quodlibet/formats/mod.py	2011-08-10 18:01:11.159389600 -0500
-@@ -17,7 +17,7 @@ try:
- except ImportError:
-     extensions = []
- else:
--    for so_version in ("libmodplug.so.1", "libmodplug.so.0"):
-+    for so_version in ("cygmodplug-1.dll", "cygmodplug-0.dll"):
-         try:
-             _modplug = ctypes.cdll.LoadLibrary(so_version)
-             _modplug.ModPlug_GetName.restype = ctypes.c_char_p
+@@ -17,1 +17,1 @@ try:
+-for so_version in ("libmodplug.so.1", "libmodplug.so.0"):
++for so_version in ("cygmodplug-1.dll", "cygmodplug-0.dll"):
 --- origsrc/quodlibet-2.3.1/quodlibet/player/_xine.py	2011-07-16 14:51:00.000000000 -0500
 +++ src/quodlibet-2.3.1/quodlibet/player/_xine.py	2011-08-10 18:01:21.599986800 -0500
-@@ -8,7 +8,7 @@ import sys
- import ctypes
- 
- try:
--    _libxine = ctypes.cdll.LoadLibrary('libxine.so.1')
-+    _libxine = ctypes.cdll.LoadLibrary('cygxine-1.dll')
- except (ImportError, OSError), e:
-     raise ImportError, e
- 
---- origsrc/quodlibet-2.3.1/setup.py	2011-07-16 14:51:00.000000000 -0500
-+++ src/quodlibet-2.3.1/setup.py	2011-08-10 18:01:54.690879500 -0500
-@@ -21,7 +21,7 @@ class clean(gdist_clean):
-         gdist_clean.run(self)
- 
-         for ext in self.distribution.gobject_modules:
--            path = ext.name.replace(".", "/") + ".so"
-+            path = ext.name.replace(".", "/") + ".dll"
-             if os.path.exists(path):
-                 os.unlink(path)
- 
-@@ -206,7 +206,7 @@ class build_gobject_ext(gdist_build_gobj
-     def run(self):
-         gdist_build_gobject_ext.run(self)
-         for ext in self.distribution.gobject_modules:
--            path = ext.name.replace(".", "/") + ".so"
-+            path = ext.name.replace(".", "/") + ".dll"
-             self.copy_file(os.path.join(self.build_lib, path), path)
- 
- def recursive_include(dir, pre, ext):
+@@ -12,1 +12,1 @@ import sys
+-    _libxine = ctypes.cdll.LoadLibrary('libxine.so.2')
++    _libxine = ctypes.cdll.LoadLibrary('cygxine-2.dll')
+@@ -16,1 +16,1 @@ import sys
+-        _libxine = ctypes.cdll.LoadLibrary('libxine.so.1')
++        _libxine = ctypes.cdll.LoadLibrary('cygxine-1.dll')
