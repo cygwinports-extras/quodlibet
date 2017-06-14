@@ -1,0 +1,12 @@
+--- origsrc/quodlibet-3.9.1/quodlibet/ext/events/trayicon/__init__.py	2017-05-26 06:05:06.000000000 -0500
++++ src/quodlibet-3.9.1/quodlibet/ext/events/trayicon/__init__.py	2017-06-14 16:18:50.482637200 -0500
+@@ -29,8 +29,7 @@ if is_osx():
+ def get_indicator_impl():
+     """Returns a BaseIndicator implementation depending on the environ"""
+ 
+-    use_app_indicator = (is_unity() or is_wayland() or is_plasma() or
+-                         is_enlightenment())
++    use_app_indicator = True
+ 
+     print_d("use app indicator: %s" % use_app_indicator)
+     if not use_app_indicator:

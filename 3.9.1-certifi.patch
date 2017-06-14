@@ -1,0 +1,8 @@
+--- origsrc/quodlibet-3.9.1/quodlibet/util/misc.py	2017-05-26 06:05:06.000000000 -0500
++++ src/quodlibet-3.9.1/quodlibet/util/misc.py	2017-06-14 15:48:31.069323100 -0500
+@@ -116,4 +116,4 @@ def get_ca_file():
+ 
+     import certifi
+ 
+-    return os.path.join(get_module_dir(certifi), "cacert.pem")
++    return certifi.where()

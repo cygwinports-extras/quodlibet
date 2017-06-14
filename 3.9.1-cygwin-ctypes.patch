@@ -1,0 +1,27 @@
+--- origsrc/quodlibet-3.9.1/quodlibet/formats/mod.py	2017-05-26 06:05:06.000000000 -0500
++++ src/quodlibet-3.9.1/quodlibet/formats/mod.py	2017-06-13 17:54:45.485630800 -0500
+@@ -19,7 +19,7 @@ extensions = [
+ 
+ try:
+     _modplug = load_library(
+-        ["libmodplug.so.1", "libmodplug.so.0", "libmodplug-1.dll"])[0]
++        ["libmodplug.so.1", "libmodplug.so.0", "cygmodplug-1.dll", "libmodplug-1.dll"])[0]
+ except OSError:
+     extensions = []
+ else:
+--- origsrc/quodlibet-3.9.1/quodlibet/player/xinebe/cdefs.py	2017-05-26 06:05:06.000000000 -0500
++++ src/quodlibet-3.9.1/quodlibet/player/xinebe/cdefs.py	2017-06-13 17:55:18.046136800 -0500
+@@ -11,11 +11,11 @@ import ctypes
+ from quodlibet.util import load_library
+ 
+ try:
+-    _libxine, name = load_library(["libxine.so.2", "libxine.so.1"])
++    _libxine, name = load_library(["libxine.so.2", "libxine.so.1", "cygxine-2.dll"])
+ except OSError as e:
+     raise ImportError(e)
+ 
+-if name.endswith("2"):
++if not name.endswith("1"):
+     _version = 2
+ else:
+     _version = 1
