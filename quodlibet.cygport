@@ -17,10 +17,10 @@ that can handle tagging, Ex Falso is for you."
 HOMEPAGE="https://quodlibet.readthedocs.io/"
 SRC_URI="https://github.com/quodlibet/quodlibet/releases/download/release-${VERSION}/quodlibet-${VERSION}.tar.gz"
 PATCH_URI="
+	https://github.com/quodlibet/quodlibet/commit/9424359228666f321d5695eed075419d34bd0f63.patch
 	3.9.1-appindicator.patch
 	3.9.1-certifi.patch
 	3.9.1-cygwin-ctypes.patch
-	3.9.1-lxsession.patch
 "
 
 ARCH=noarch
@@ -28,3 +28,5 @@ ARCH=noarch
 DIFF_EXCLUDES="build po"
 
 REQUIRES="girepository-AppIndicator3_0.1 girepository-Gst1.0 girepository-GstInterfaces1.0 girepository-Gtk3.0 girepository-GtkSource3.0 girepository-Keybinder3.0 girepository-Soup2.4 gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad-free libmodplug1 python2-certifi python2-futures python2-musicbrainzngs"
+
+OBSOLETES="quodlibet-plugins"
